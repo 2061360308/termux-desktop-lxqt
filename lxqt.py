@@ -28,8 +28,8 @@ RESET      = Style.RESET_ALL
 
 class pkgs:
 	# X11      = 'pkg install -y x11-repo'
-	PKGS     = 'apt install -y xcompmgr audacious xpdf qt5-qtbase-gtk-platformtheme qt5-qttools qt5-qtx11extras lxqt lxqt-build-tools otter-browser qgit featherpad gtk2 gtk3 python-tkinter tigervnc xorg-xhost openbox geany qt5-qtwebsockets qt5-qtxmlpatterns qt5-qtdeclarative geany-plugins xorg-xprop neofetch galculator qt5-qttools glade feathernotes xorg-xprop mtpaint xorg-xhost'
-	UNSTABLE = 'apt install -y gobject-introspection at-spi2-atk'
+	PKGS     = 'sudo apt install  -y xcompmgr audacious xpdf qt5-gtk-platformtheme qttools5-dev-tools libqt5x11extras5-dev lxqt lxqt-build-tools qgit featherpad libgtk2.0-0 libgtk-3-0 python3-tk tigervnc x11-xserver-utils openbox geany libqt5websockets5-dev libqt5xmlpatterns5-dev qtdeclarative5-dev geany-plugins x11-utils neofetch galculator qttools5-dev-tools glade mtpaint'
+	UNSTABLE = 'sudo apt install -y  libatk-adaptor at-spi2-core'
 	
 
 def icons():

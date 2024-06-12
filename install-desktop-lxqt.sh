@@ -24,8 +24,7 @@ echo -e "Installing ... "
 sleep 1
 sudo apt install python3 -y
 sudo apt install python3-pip -y
-python3 -m pip install --upgrade pip
-python3 -m pip install colorama
+sudo apt install python3-colorama -y
 clear
 python3 termux-desktop-lxqt/lxqt.py
 
