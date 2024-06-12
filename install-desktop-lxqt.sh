@@ -1,6 +1,7 @@
 #!/bin/bash
 
 clear
+export HOME=$(eval echo ~)
 cd $HOME
 #
 echo -e "Installing ... "

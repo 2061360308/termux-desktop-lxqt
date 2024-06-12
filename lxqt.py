@@ -27,9 +27,9 @@ RESET      = Style.RESET_ALL
 #
 
 class pkgs:
-	X11      = 'pkg install -y x11-repo'
-	PKGS     = 'pkg install -y xcompmgr audacious xpdf qt5-qtbase-gtk-platformtheme qt5-qttools qt5-qtx11extras lxqt lxqt-build-tools otter-browser qgit featherpad gtk2 gtk3 python-tkinter tigervnc xorg-xhost openbox geany qt5-qtwebsockets qt5-qtxmlpatterns qt5-qtdeclarative termux-api geany-plugins xorg-xprop neofetch galculator qt5-qttools glade feathernotes xorg-xprop mtpaint xorg-xhost'
-	UNSTABLE = 'pkg install -y gobject-introspection at-spi2-atk '
+	# X11      = 'pkg install -y x11-repo'
+	PKGS     = 'apt install -y xcompmgr audacious xpdf qt5-qtbase-gtk-platformtheme qt5-qttools qt5-qtx11extras lxqt lxqt-build-tools otter-browser qgit featherpad gtk2 gtk3 python-tkinter tigervnc xorg-xhost openbox geany qt5-qtwebsockets qt5-qtxmlpatterns qt5-qtdeclarative geany-plugins xorg-xprop neofetch galculator qt5-qttools glade feathernotes xorg-xprop mtpaint xorg-xhost'
+	UNSTABLE = 'apt install -y gobject-introspection at-spi2-atk'
 	
 
 def icons():
@@ -77,6 +77,31 @@ def folders():
 	system('mkdir $HOME/Documents')
 	system('mkdir $HOME/Video')
 	system('chmod +x ~/.vnc/xstartup')
+
+def setUbuntu():
+	system('export HOME=~')
+	system('export PREFIX=/usr')
+
+	# 备份 /etc/apt/sources.list 文件
+	system("cp /etc/apt/sources.list /etc/apt/sources.list.backup")
+    
+    # 清空 /etc/apt/sources.list 文件的内容
+	system("echo '' > /etc/apt/sources.list")
+    
+    # 向 /etc/apt/sources.list 文件中添加新的APT源地址
+	system("echo 'deb https://mirrors.ustc.edu.cn/ubuntu-ports/ noble main restricted universe multiverse' > /etc/apt/sources.list")
+	system("echo '# deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ noble main restricted universe multiverse' >> /etc/apt/sources.list")
+	system("echo 'deb https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-security main restricted universe multiverse' >> /etc/apt/sources.list")
+	system("echo '# deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-security main restricted universe multiverse' >> /etc/apt/sources.list")
+	system("echo 'deb https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-updates main restricted universe multiverse' >> /etc/apt/sources.list")
+	system("echo '# deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-updates main restricted universe multiverse' >> /etc/apt/sources.list")
+	system("echo 'deb https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-backports main restricted universe multiverse' >> /etc/apt/sources.list")
+	system("echo '# deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-backports main restricted universe multiverse' >> /etc/apt/sources.list")
+	system("echo '# deb https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-proposed main restricted universe multiverse' >> /etc/apt/sources.list")
+	system("echo '# deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-proposed main restricted universe multiverse' >> /etc/apt/sources.list")
+	
+	# 更新APT源
+	system("apt-get update")
 	
 def exit_py():
 	pass
@@ -85,7 +110,7 @@ def exit_py():
 def main():
 	pass
 
-os.chdir(r'/data/data/com.termux/files/home')
+os.chdir(os.path.expanduser('~'))
 interface = BRIGHT + MAGENTA + "Termux-Desktop "
 print(interface.center(60))
 sleep(1)
@@ -108,7 +133,7 @@ system('apt autoremove')
 
 print(RESET + BRIGHT + MAGENTA + "INSTALLING PACKAGES AND APPLICATIONS " + BRIGHT + GREEN )
 sleep(0.5)
-system(pkgs.X11)
+# system(pkgs.X11)
 system(pkgs.PKGS)
 system(pkgs.UNSTABLE)
 
@@ -123,7 +148,7 @@ folders()
 
 print(RESET + BRIGHT + MAGENTA + "\t Almost Done ...")
 sleep(0.2)
-extra.access_storage()
+# extra.access_storage()
 extra.symbolic_link()
 
 print(RESET + BRIGHT + MAGENTA + "\tPROCESS FINISHED ")
