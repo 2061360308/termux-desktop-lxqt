@@ -28,7 +28,7 @@ RESET      = Style.RESET_ALL
 
 class pkgs:
 	# X11      = 'pkg install -y x11-repo'
-	PKGS     = 'sudo apt install  -y xcompmgr audacious xpdf qt5-gtk-platformtheme qttools5-dev-tools libqt5x11extras5-dev lxqt lxqt-build-tools qgit featherpad libgtk2.0-0 libgtk-3-0 python3-tk tigervnc x11-xserver-utils openbox geany libqt5websockets5-dev libqt5xmlpatterns5-dev qtdeclarative5-dev geany-plugins x11-utils neofetch galculator qttools5-dev-tools glade mtpaint'
+	PKGS     = 'sudo apt install  -y xcompmgr audacious xpdf qt5-gtk-platformtheme qttools5-dev-tools libqt5x11extras5-dev lxqt lxqt-build-tools qgit featherpad libgtk2.0-0 libgtk-3-0 python3-tk tigervnc-standalone-server x11-xserver-utils openbox geany libqt5websockets5-dev libqt5xmlpatterns5-dev qtdeclarative5-dev geany-plugins x11-utils neofetch galculator qttools5-dev-tools glade mtpaint'
 	UNSTABLE = 'sudo apt install -y  libatk-adaptor at-spi2-core'
 	
 
