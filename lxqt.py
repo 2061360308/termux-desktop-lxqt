@@ -83,25 +83,25 @@ def setUbuntu():
 	system('export PREFIX=/usr')
 
 	# 备份 /etc/apt/sources.list 文件
-	system("cp /etc/apt/sources.list /etc/apt/sources.list.backup")
+	#system("cp /etc/apt/sources.list /etc/apt/sources.list.backup")
     
     # 清空 /etc/apt/sources.list 文件的内容
-	system("echo '' > /etc/apt/sources.list")
+	#system("echo '' > /etc/apt/sources.list")
     
     # 向 /etc/apt/sources.list 文件中添加新的APT源地址
-	system("echo 'deb https://mirrors.ustc.edu.cn/ubuntu-ports/ noble main restricted universe multiverse' > /etc/apt/sources.list")
-	system("echo '# deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ noble main restricted universe multiverse' >> /etc/apt/sources.list")
-	system("echo 'deb https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-security main restricted universe multiverse' >> /etc/apt/sources.list")
-	system("echo '# deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-security main restricted universe multiverse' >> /etc/apt/sources.list")
-	system("echo 'deb https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-updates main restricted universe multiverse' >> /etc/apt/sources.list")
-	system("echo '# deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-updates main restricted universe multiverse' >> /etc/apt/sources.list")
-	system("echo 'deb https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-backports main restricted universe multiverse' >> /etc/apt/sources.list")
-	system("echo '# deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-backports main restricted universe multiverse' >> /etc/apt/sources.list")
-	system("echo '# deb https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-proposed main restricted universe multiverse' >> /etc/apt/sources.list")
-	system("echo '# deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-proposed main restricted universe multiverse' >> /etc/apt/sources.list")
+	#system("echo 'deb https://mirrors.ustc.edu.cn/ubuntu-ports/ noble main restricted universe multiverse' > /etc/apt/sources.list")
+	#system("echo '# deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ noble main restricted universe multiverse' >> /etc/apt/sources.list")
+	#system("echo 'deb https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-security main restricted universe multiverse' >> /etc/apt/sources.list")
+	#system("echo '# deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-security main restricted universe multiverse' >> /etc/apt/sources.list")
+	#system("echo 'deb https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-updates main restricted universe multiverse' >> /etc/apt/sources.list")
+	#system("echo '# deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-updates main restricted universe multiverse' >> /etc/apt/sources.list")
+	#system("echo 'deb https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-backports main restricted universe multiverse' >> /etc/apt/sources.list")
+	#system("echo '# deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-backports main restricted universe multiverse' >> /etc/apt/sources.list")
+	#system("echo '# deb https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-proposed main restricted universe multiverse' >> /etc/apt/sources.list")
+	#system("echo '# deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-proposed main restricted universe multiverse' >> /etc/apt/sources.list")
 	
 	# 更新APT源
-	system("apt-get update")
+	#system("apt-get update")
 	
 def exit_py():
 	pass
