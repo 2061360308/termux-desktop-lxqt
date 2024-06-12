@@ -1,7 +1,5 @@
-killall Xvnc
-export HOME=$(eval echo ~)
-export PREFIX='/usr'
-rm -rf $HOME/.vnc/localhost:1.pid
-rm -rf $PREFIX/tmp/.X1-lock
-rm -rf $PREFIX/tmp/.X11-unix/X1
-echo "stop desktop successfull" 
+killall vncserver
+rm -rf /tmp/.X1-lock
+rm -rf /tmp/.X11-unix/X1
+vncserver -kill:1 > /dev/null 2>&1
+echo "stop desktop successfull"

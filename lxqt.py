@@ -28,7 +28,7 @@ RESET      = Style.RESET_ALL
 
 class pkgs:
 	# X11      = 'pkg install -y x11-repo'
-	PKGS     = 'sudo apt install  -y xcompmgr audacious xpdf qt5-gtk-platformtheme qttools5-dev-tools libqt5x11extras5-dev lxqt lxqt-build-tools qgit featherpad libgtk2.0-0 libgtk-3-0 python3-tk tigervnc-standalone-server x11-xserver-utils openbox geany libqt5websockets5-dev libqt5xmlpatterns5-dev qtdeclarative5-dev geany-plugins x11-utils neofetch galculator qttools5-dev-tools glade mtpaint'
+	PKGS     = 'sudo apt install  -y xcompmgr audacious xpdf qt5-gtk-platformtheme qttools5-dev-tools libqt5x11extras5-dev lxqt lxqt-build-tools qgit featherpad libgtk2.0-0 libgtk-3-0 python3-tk tigervnc-standalone-server x11-xserver-utils openbox geany libqt5websockets5-dev libqt5xmlpatterns5-dev qtdeclarative5-dev geany-plugins x11-utils neofetch galculator qttools5-dev-tools glade mtpaint dbus-x11'
 	UNSTABLE = 'sudo apt install -y  libatk-adaptor at-spi2-core'
 	
 
@@ -77,6 +77,19 @@ def folders():
 	system('mkdir $HOME/Documents')
 	system('mkdir $HOME/Video')
 	system('chmod +x ~/.vnc/xstartup')
+	# 写入 ~/.vnc/xstartup 文件
+	system("echo '#!/bin/sh' > ~/.vnc/xstartup")
+	system("echo '' >> ~/.vnc/xstartup")
+	system("echo '# Start up the standard system desktop' >> ~/.vnc/xstartup")
+	system("echo 'unset SESSION_MANAGER' >> ~/.vnc/xstartup")
+	system("echo 'unset DBUS_SESSION_BUS_ADDRESS' >> ~/.vnc/xstartup")
+	system("echo '' >> ~/.vnc/xstartup")
+	system("echo '/usr/bin/startlxqt' >> ~/.vnc/xstartup")
+	system("echo '' >> ~/.vnc/xstartup")
+	system("echo '[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup' >> ~/.vnc/xstartup")
+	system("echo '[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources' >> ~/.vnc/xstartup")
+	system("echo 'x-window-manager &' >> ~/.vnc/xstartup")
+
 
 def setUbuntu():
 	system('export HOME=~')
