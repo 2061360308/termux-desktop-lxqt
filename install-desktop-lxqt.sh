@@ -20,6 +20,8 @@ echo '# deb https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-proposed main restri
 echo '# deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ noble-proposed main restricted universe multiverse' >> /etc/apt/sources.list
 apt update
 
+apt install sudo nano adduser -y
+
 echo -e "Installing ... "
 sleep 1
 sudo apt install python3 -y
