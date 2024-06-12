@@ -6,11 +6,11 @@ cd $HOME
 #
 echo -e "Installing ... "
 sleep 1
-pkg install python wget -y
-python -m pip install --upgrade pip
-pip install colorama
+sudo apt install python3 -y
+python3 -m pip install --upgrade pip
+python3 -m pip install colorama
 clear
-python termux-desktop-lxqt/lxqt.py
+python3 termux-desktop-lxqt/lxqt.py
 
 echo -e """\e[1;32menjoy!!
 To Start The Vnc Server, Type start-desktop
